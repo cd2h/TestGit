@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="../css/nav.css" />
+
+<script src="../js/nav.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+	$(function(){
+		if(/*[[${user}]]*/){
+			$(".unLogin").hide();
+			$(".alreadyLogin").show();
+		}else{
+			$(".unLogin").show();
+			$(".alreadyLogin").hide();
+		}		
+	});
+	
+</script>
+<div style="height: 55px;">&nbsp;</div>
+<header class="cd-auto-hide-header">
+	<nav class="navbar navbar-color navbar-fixed-top">
+		<div class="navbar-header">
+			<button class="navbar-toggle" data-toggle="collapse"
+				data-target="#responsive-navbar">
+				<span class="icon-bar whiteline"></span> <span
+					class="icon-bar whiteline"></span> <span class="icon-bar whiteline"></span>
+			</button>
+			<div class="titile">
+				<a href="/index" class="navbar-brand white navbar_name_right"><strong>老司机带你玩</strong></a>
+			</div>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="responsive-navbar">
+			<div class="profile navbar-right">
+				<ul class="nav navbar-nav navbar_name_left">
+					<li><a href="/index" class="nav_btn_rihgt nav_btn_left white"><i
+							class="fa fa-home fa-lg"></i>&nbsp;主页</a></li>
+					<li><a href="/cities" class="nav_btn_rihgt white"><i
+							class="fa fa-location-arrow fa-lg"></i>&nbsp;<span th:text="${city != null}?${city.name}:'城市'"></span></a></li>
+					<li><a href="#" class="nav_btn_rihgt white"><i
+							class="fa fa-bell" aria-hidden="true"></i>&nbsp;消息</a></li>
+					<li><a href="new?type=register"
+						class=" white unLogin margin-left">注册</a></li>
+					<li><a href="new?type=login" class=" white unLogin">登录</a></li>
+					<li><a href="personal" class=" white alreadyLogin margin-left">你好！<span
+							th:text="${user != null} ?  ${user.userName} : '请登录'"></span></a></li>
+					<li><a href="logout" class=" white alreadyLogin">退出</a></li>
+				</ul>
+				<a href="/detail/new" class="btn btn-color navbar-btn navbar-right">去旅行</a>
+			</div>
+		</div>
+	</nav>
+</header>

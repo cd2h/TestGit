@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/buttons.css" />
+
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="../js/buttons.js"></script> -->
+
+<!--third lib-->
+<link rel="stylesheet" href="../css/buttons.css" />
+<link rel="stylesheet"
+	href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+
+
+<!--this page's -->
+<link rel="stylesheet" href="../css/index.css" />
+
+<!-- bootstrap select -->
+<link rel="stylesheet"
+	href="../bootstrap-select/dist/css/bootstrap-select.min.css" />
+<script type="text/javascript"
+	src="../bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<title>老司机带你玩</title>
+
+<script type="text/javascript" th:inline="javascript">
+<!--
+	$(document).ready(function() {
+
+		$('.selectpicker').selectpicker({
+			"noneResultsText" : "没有相关城市 {0}"
+		});
+
+		$(".form-control").on('keyup', function(e) {
+			var keynum;
+			if (window.event) { // IE                    
+				keynum = e.keyCode;
+			} else if (e.which) { // Netscape/Firefox/Opera                   
+				keynum = e.which;
+			}
+			/*<![CDATA[*/
+			if(keynum < 37 || keynum > 40){
+				searchCity(this.value);
+			}
+			/*]]>*/
+		});
+
+		
+		
+		function searchCity(key) {
+			if (key == null || key == "")
+				return;
+			$.ajax({
+				type : 'Get',
+				url : '/search_city/' + key,
+				dataType : "Json",
+				success : function(data) {
+					$('.selectpicker').html("");
+					if (data == null)
+						return;
+
+					var optionString = "";
+					for ( var i in data) {
+						option = $("<option></option>");
+						option.attr("value", data[i].pinyin);
+						option.html(data[i].name);
+						$('.selectpicker').append(option);
+					}
+
+					$('.selectpicker').selectpicker("refresh");
+				}
+			})
+
+		}
+
+		//bootstramp-select选择后触发
+		$('.selectpicker').on('change', function() {
+			var selected = $(this).find("option:selected").val();
+			self.location = 'city/' + selected;
+		});
+	});
+	-->
+</script>
+
+<!-- 城市选择框js -->
+<script th:src="@{../js/city-select.js}"></script>
+<script type="text/javascript" th:inline="javascript">
+		
+		// bootstramp-select选择后触发
+		$('.selectpicker').on('change', function() {
+			var selected = $(this).find("option:selected").val();
+			self.location = 'city/' + selected;
+		});
+
+		function metropolisCity() {
+			$.ajax({
+				type : 'Get',
+				url : '/get_metropolis',
+				dataType : "Json",
+				success : function(data) {
+					$('.selectpicker').html("");
+					if (data == null)
+						return;
+
+					var optionString = "";
+					for ( var i in data) {
+						option = $("<option></option>");
+						option.attr("value", data[i].pinyin);
+						option.html(data[i].name);
+						$('.selectpicker').append(option);
+					}
+
+					$('.selectpicker').selectpicker("refresh");
+
+					/**显示城市*/
+					var hasCity = /*[[${city != null}]]*/;
+					
+					$('.filter-option').html(/*[[${city != null}?${city.name}:'输入城市']]*/);
+					
+				}
+			});
+		}
+</script>
+
+
+</head>
+<body>
+
+	<div th:include="nav"></div>
+	<div class="bg">
+		<div class="wrap head-wrap" id="condition-div">
+
+			<div class="controls" style="width: 600px; float: left;">
+				<label class="control-label f18px">旅游城市</label> <br /> <select
+					id="select_city" class="selectpicker" data-live-search="true"
+					data-width="400px" data-live-search-style="begins" title="输入城市">
+					<option data-tokens="beijing">北京</option>
+					<option data-tokens="shanghai">上海</option>
+					<option data-tokens="shenzhen">深圳</option>
+				</select>
+			</div>
+
+			<div style="float: left;" class="button-group">
+				<label class="control-label f18px">筛选性别</label> <br />
+				<button type="button"
+					class="button button-pill button-primary button-small">全部</button>
+				<button type="button"
+					class="button button-pill button-primary button-small">只看男</button>
+				<button type="button"
+					class="button button-pill button-primary button-small">只看女</button>
+			</div>
+		</div>
+
+		<div class="wrap" id="content-wrap">
+
+			<div class="single-member effect-8">
+				<div class="member-info">
+					<h3>所所所所所</h3>
+				</div>
+				<div class="member-image">
+					<img src="../img/member_270x210.jpg" alt="Member" />
+				</div>
+				<div class="more-info">
+					<div class="social-touch">
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button button-block button-rounded button-highlight"><i
+								class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;内容</a>
+						</p>
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button button-block button-rounded button-highlight"><i
+								class="fa fa-user-o" aria-hidden="true"></i>&nbsp;用户</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-member effect-8">
+				<div class="member-info">
+					<h3>所所所所所</h3>
+				</div>
+				<div class="member-image">
+					<img src="../img/member_270x210.jpg" alt="Member" />
+				</div>
+				<div class="more-info">
+					<div class="social-touch">
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-action"><i
+								class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;内容</a>
+						</p>
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-action"><i
+								class="fa fa-user-o" aria-hidden="true"></i>&nbsp;用户</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-member effect-8">
+				<div class="member-info">
+					<h3>所所所所所</h3>
+				</div>
+				<div class="member-image">
+					<img src="../img/member_270x210.jpg" alt="Member" />
+				</div>
+				<div class="more-info">
+					<div class="social-touch">
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-royal"><i
+								class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;内容</a>
+						</p>
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-royal"><i
+								class="fa fa-user-o" aria-hidden="true"></i>&nbsp;用户</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-member effect-8">
+				<div class="member-info">
+					<h3>所所所所所</h3>
+				</div>
+				<div class="member-image">
+					<img src="../img/member_270x210.jpg" alt="Member" />
+				</div>
+				<div class="more-info">
+					<div class="social-touch">
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-caution"><i
+								class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp;内容</a>
+						</p>
+						<p>
+							<a href="http://www.bootcss.com/"
+								class="button  button-block button-rounded button-caution"><i
+								class="fa fa-user-o" aria-hidden="true"></i>&nbsp;用户</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="clear"></div>
+
+		</div>
+	</div>
+
+	<div th:include="footer"></div>
+
+</body>
+
+</html>

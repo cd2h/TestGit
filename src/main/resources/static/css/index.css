@@ -1,0 +1,200 @@
+
+.bg{
+	background-color: white;
+	margin: 0px;
+	padding: 0px;
+	height:auto;
+}
+
+.head-wrap{
+	padding:10px;
+	height:240px;
+}
+
+#condition-div{
+	height:170px;
+	color:#1B9AF7;
+}
+
+#condition-div div{
+	padding-bottom:5px;
+}
+
+.wrap{
+	background-color: #f5f5f5;
+	height: auto;
+	margin: 30px auto;
+}
+
+#content-wrap{
+	min-height: 420px;
+}
+
+.single-member{
+  width: 220px; 
+  float: left; 
+  font-family: sans-sarif; 
+  margin: 40px 2.0%; 
+  background-color: #fff; 
+  text-align: left; 
+  position: relative;
+  border:1px solid #ddd;
+}
+
+
+.member-info{
+	padding-left: 8px;
+	height: 100px;
+}
+
+.member-info h3{
+	font-size: 18px;
+	font-family: "微软雅黑";
+}
+
+.member-image img{
+  max-width: 100%; 
+  vertical-align: middle;
+}
+
+h3 {
+  font-size: 24px; 
+  font-weight: normal; 
+  margin: 10px 0 0; 
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 16px; 
+  font-weight: 300; 
+  margin: 0 0 15px; 
+  line-height: 22px;
+}
+p {font-size: 14px; 
+  font-weight: 300; 
+  line-height: 22px; 
+  padding: 0 30px; 
+  margin-bottom: 10px;
+}
+
+.social-touch{
+	text-align: center;
+	margin-top: 0px;
+}
+
+.fb-touch{
+  background-position: 0 0;
+}
+.tweet-touch{
+  background-position: -35px 0;
+}
+.linkedin-touch{
+  background-position: -71px 0;
+}
+.icon-colored .fb-touch{
+  background-position: 0 -27px;
+}
+.icon-colored .tweet-touch{
+  background-position: -35px -27px;
+}
+.icon-colored .linkedin-touch{
+  background-position: -71px -27px;
+}
+
+/*= effect-8 css =*/
+.effect-8{max-height: 589px; min-height: 289px; overflow: hidden;  perspective: 800px;}
+.effect-8 h3{line-height: 35px;}
+.effect-8 .member-image{position: absolute; bottom: 0; width: 100%; transition: 0.4s; z-index: 1;}
+.effect-8 .member-image img{width: 100%; transition: 0.4s; height: 100%;}
+.effect-8 .more-info{height: 208px; transition: 0.4s; overflow: hidden; position: relative;background-color: #fff;}
+.effect-8:hover .member-image{transform: rotateX(82deg); transform-origin: center bottom 0; transition: 0.4s;}
+/*= effect-8 css end =*/
+
+/**大屏幕*/
+@media only screen and (min-width:980px){
+	.wrap{
+		width:1260px;
+	}	
+	
+	.single-member{
+  		margin: 50px 3.5%;
+  	}
+  	
+  	.effect-8{
+  		height: 289px;
+  	}
+}
+/**中等屏幕*/
+@media only screen and (min-width:670px) and (max-width: 980px){
+	.wrap{
+		width:760px;
+	}
+  	.effect-8{
+  		height: 289px;
+  	}
+}
+/**大手机*/
+@media only screen and (min-width:480px) and (max-width:670px){
+	.wrap{
+		width:620px;	
+	}
+	
+	.single-member{
+		width:280px;
+  		margin: 30px 1.5%;
+  		height: 330px;
+  	} 
+  	
+  	.effect-8{
+  		height: 339px;
+  	}
+  	
+  	.social-touch{
+		margin-top: 30px;
+	}
+	
+}
+
+/**小手机*/
+@media only screen and (min-width:321px) and (max-width:480px){
+	.single-member{
+		width:90%;
+  		margin: 30px 5%;
+  	} 
+  	
+  	.effect-8{
+  		height: 389px;
+  	}
+  	
+  	.social-touch{
+		margin-top: 30px;
+	}
+	
+	
+	.social-touch p{
+		height: 65px;
+		line-height: 65px;
+	}
+	
+	
+}
+
+/**超小手机 iphone5*/
+@media only screen and (max-width:321px){
+	.single-member{
+		width:90%;
+  		margin: 30px 5%;
+  	} 
+  	
+  	.effect-8{
+  		height: 342px;
+  	}
+  	
+  	.social-touch{
+		margin-top: 30px;
+	}
+	
+	.social-touch p{
+		height: 55px;
+		line-height: 55px;
+	}
+}

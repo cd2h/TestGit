@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<title></title>
+
+		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../Flat-UI-master/dist/css/flat-ui.min.css" />
+
+		<!--
+			<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        -->
+
+		<script type="text/javascript" src="../jQuery.filer/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+		<!--upload image-->
+		<script type="text/javascript" src="../jQuery.filer/js/jquery.filer.js"></script>
+
+		<!--third lib-->
+		<link rel="stylesheet" href="../css/buttons.css" />
+		<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+
+		<!--upload image-->
+		<link rel="stylesheet" href="../jQuery.filer/css/jquery.filer.css" />
+		<link rel="stylesheet" href="../jQuery.filer/css/jquery.filer-dragdropbox-theme.css" />
+
+		<link rel="stylesheet" type="text/css" href="../css/publish.css" />
+		<link rel="stylesheet" href="../bootstrap-select/dist/css/bootstrap-select.min.css" />
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//加载图片上传框
+				$('#filer_input').filer({
+					maxSize: 15,
+					limit: 1,
+					showThumbs: true,
+					extensions: ["jpg", "bmp", "jpeg", "png", "gif", "JPG", "JPEG", "PNG", "BMP", "GIF"],
+					templates: {
+						box: '<ul class="jFiler-items-list jFiler-items-grid"></ul>',
+						item: '<li class="jFiler-item">\
+                    <div class="jFiler-item-container">\
+                        <div class="jFiler-item-inner">\
+                            <div class="jFiler-item-thumb">\
+                                <div class="jFiler-item-status"></div>\
+                                <div class="jFiler-item-info">\
+                                    <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
+                                    <span class="jFiler-item-others">{{fi-size2}}</span>\
+                                </div>\
+                                {{fi-image}}\
+                            </div>\
+                            <div class="jFiler-item-assets jFiler-row">\
+                                <ul class="list-inline pull-left">\
+                                    <li>{{fi-progressBar}}</li>\
+                                </ul>\
+                                <ul class="list-inline pull-right">\
+                                    <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
+                                </ul>\
+                            </div>\
+                        </div>\
+                    </div>\
+                </li>',
+						itemAppend: '<li class="jFiler-item">\
+                        <div class="jFiler-item-container">\
+                            <div class="jFiler-item-inner">\
+                                <div class="jFiler-item-thumb">\
+                                    <div class="jFiler-item-status"></div>\
+                                    <div class="jFiler-item-info">\
+                                        <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
+                                        <span class="jFiler-item-others">{{fi-size2}}</span>\
+                                    </div>\
+                                    {{fi-image}}\
+                                </div>\
+                                <div class="jFiler-item-assets jFiler-row">\
+                                    <ul class="list-inline pull-left">\
+                                        <li><span class="jFiler-item-others">{{fi-icon}}</span></li>\
+                                    </ul>\
+                                    <ul class="list-inline pull-right">\
+                                        <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
+                                    </ul>\
+                                </div>\
+                            </div>\
+                        </div>\
+                    </li>',
+						itemAppendToEnd: false,
+						removeConfirmation: true,
+						_selectors: {
+							list: '.jFiler-items-list',
+							item: '.jFiler-item',
+							remove: '.jFiler-item-trash-action'
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="bg">
+			<div class="wrap">
+
+				<form class="form-horizontal" enctype="multipart/form-data" method="post">
+					<fieldset>
+						<div id="legend" class="">
+							<h1 class="cDarkBlue f34px">表单名</h1>
+						</div>
+
+						<div class="control-group">
+
+							<!-- Text input-->
+
+							<div class="controls">
+								<label class="control-label" for="input01">行程标题</label>
+								<input type="text" placeholder="吸引人的标题，行程更容易被采用" class="input-xlarge form-control" />
+							</div>
+						</div>
+						<div class="control-group">
+
+							<!-- Select Basic -->
+
+							<div class="controls">
+								<label class="control-label">买单方式</label>
+								<select class="selectpicker" data-style="btn-info" data-width="50%">
+									<option value="1" >AA</option>
+									<option value="2" >男生买单</option>
+									<option value="3" >女生买单</option>
+								</select>
+							</div>
+
+						</div>
+
+						<div class="control-group">
+
+							<!-- Select Basic -->
+
+							<div class="controls">
+								<label class="control-label">出行方式</label>
+								<select class="selectpicker" data-style="btn-info" data-width="50%">
+									<option>公共交通</option>
+									<option>私家车</option>
+									<option>自行车</option>
+								</select>
+							</div>
+
+						</div>
+
+						<div class="control-group">
+
+							<!-- File Upload -->
+
+							<div class="controls">
+								<label class="control-label">个人形象</label>
+								<input type="file" name="files[]" id="filer_input" multiple="multiple" />
+							</div>
+						</div>
+
+						<div class="control-group">
+
+							<!-- Textarea -->
+
+							<div class="controls">
+								<label class="control-label">个人介绍</label>
+								<div class="textarea">
+									<textarea rows="8" type="" class=""></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="control-group">
+
+							<!-- Textarea -->
+
+							<div class="controls">
+								<label class="control-label">行程规划</label>
+								<div class="textarea">
+									<textarea rows="8" type="" class=""></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<!-- Button -->
+							<div class="controls">
+								<a href="#" class="button button-block button-rounded button-primary button-large">Go</a>
+							</div>
+						</div>
+
+					</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</body>
+
+</html>

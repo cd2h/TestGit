@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!--commons-->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+<!-- icheck -->
+<link rel="stylesheet" href="../iCheck/skins/square/_all.css" />
+<script type="text/javascript" src="../iCheck/icheck.min.js"></script>
+
+<!-- alert -->
+<script type="text/javascript" src="../toastmessage/src/main/javascript/jquery.toastmessage.js" ></script>
+<link rel="stylesheet"
+	href="../toastmessage/src/main/resources/css/jquery.toastmessage.css" />
+
+<!--third lib-->
+<link rel="stylesheet" href="../css/buttons.css" />
+<!--
+			this page's 
+        -->
+<link rel="stylesheet" href="../css/login.css" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<title></title>
+
+<script type="text/javascript" th:inline="javascript">
+
+function switchForm(t){
+	if(t == 'login'){
+	
+		$("#switch_login_button a").attr("style","color:#fff;");
+		$("#switch_register_button a").attr("style","color:#DDDDDD;");
+	
+		$(".white_slider").animate({"left":($("#switch_login_button")).position().left},50);
+		
+		$("#login_form_div").show();
+		$("#register_form_div").hide();
+	}else if(t == 'register'){
+		$("#switch_register_button a").attr("style","color:#fff;");
+		$("#switch_login_button a").attr("style","color:#DDDDDD;");
+		
+		$("#register_form_div").show();
+		$("#login_form_div").hide();
+		
+		$(".white_slider").animate({"left":($("#switch_register_button")).position().left},50);
+	}
+	
+}
+
+	
+	$(function() {
+		
+		/*<![CDATA[*/
+			function getUrlParam(name) {
+				var before = "(^|&)";
+				var after = '=([^&]*)(&|$)';
+		        var reg = new RegExp(before + name + after);
+		        var r = window.location.search.substr(1).match(reg);
+		        if (r != null) return unescape(r[2]); return null;
+		    }
+		/*]]>*/
+		
+		var type;
+		if(/*[[${type}]]*/){
+			type = /*[[${type}]]*/;
+		}else{
+			type=getUrlParam('type');
+		}
+		getUrlParam('type');
+		if('register' == type){
+			switchForm("register");
+		}else{
+			switchForm("login");
+		}
+		
+		
+		
+		if(/*[[${error}]]*/)
+			$().toastmessage('showErrorToast', /*[[${error}]]*/);
+
+		/**sex redio*/
+		$('.sex').iCheck({
+			checkboxClass: 'icheckbox_square-blue',
+		    radioClass: 'iradio_square-blue'
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	<div id="wrap_div" class="common_wrap">
+		<div id="logo_div">
+			<div id="introduce_div">
+				<h1 class="cWhite f20px">本地导游免费带你玩</h1>
+			</div>
+			<div id="logo_div_img">
+				<!--logo -->
+			</div>
+		</div>
+		<div class="clear"></div>
+
+		<div id="myTabs" class="f18px cWhite">
+			<div class="tab" id="switch_login_button">
+				<a href="javascript:switchForm('login')">登录</a>
+			</div>
+			<div class="tab" id="switch_register_button">
+				<a href="javascript:switchForm('register')">注册</a>
+			</div>
+			<div class="white_slider"></div>
+			<div class="clear"></div>
+		</div>
+
+		<div id="form_wrap_div" class="cGray">
+
+			<div class="tab-content">
+				<div class="tab-pane active" id="login_form_div">
+					<!--
+							login
+                       -->
+					<form action="login" method="post" class="login_form">
+						<div class="whiteBoard">
+							<div class="input-group">
+								<span class="input-group-addon"> <span
+									class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</span> <input type="text" name="loginName"
+									class="form-control login_input" placeholder="用户名/手机号"
+									aria-describedby="basic-addon1" />
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-keyboard-o" aria-hidden="true"></i>
+								</span> <input type="password" name="passWord"
+									class="form-control login_input" placeholder="密码"
+									aria-describedby="basic-addon1" />
+							</div>
+							<!-- 
+								<div>二维马</div>
+								 -->
+						</div>
+
+						<!-- 
+							<div class="f12px cWhite wechat_div" onclick="javascript:showWechat();"></div>
+							 -->
+
+						<div class="forget_password f12px cWhite">
+							<a href="forget_password">找回密码</a>
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="submit_div">
+							<input
+								class="button button-rounded button-plain button-small-caps button-border submit_input"
+								value="登录" type="submit" />
+						</div>
+					</form>
+
+				</div>
+				<div class="tab-pane" id="register_form_div">
+					<!--
+							register
+                        -->
+					<form action="register" method="post" class="register_form">
+						<div class="whiteBoard">
+							<div class="input-group">
+								<span class="input-group-addon"> <span
+									class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+								</span> <input type="text" name="cellPhone"
+									class="form-control login_input" placeholder="手机号"
+									aria-describedby="basic-addon1" />
+							</div>
+
+							<div class="input-group">
+								<span class="input-group-addon"> <span
+									class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</span> <input type="text" name="userName"
+									class="form-control login_input" placeholder="用户名"
+									aria-describedby="basic-addon1" />
+							</div>
+							<div class="input-group">
+								<span class="input-group-addon"> <i
+									class="fa fa-keyboard-o" aria-hidden="true"></i>
+								</span> <input type="text" name="passWord"
+									class="form-control login_input" placeholder="密码"
+									aria-describedby="basic-addon1" />
+							</div>
+
+							<div class="input-group">
+								<span class="input-group-addon"> <input type="radio"
+									id="male" class="sex" name="sex" value="1" checked="checked" />
+									<label for="male" class="">男</label>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio"
+									id="female" class="sex" name="sex" value="0" /> <label
+									for="female" class="">女</label>
+								</span>
+
+							</div>
+						</div>
+						<div class="submit_div">
+							<input
+								class="button button-rounded button-plain button-small-caps button-border submit_input"
+								value="注册" type="submit" />
+						</div>
+
+						<div class="f12px cWhite license_div">
+							点击「注册」按钮，即代表你同意<a href="#">《老司机带你玩协议》</a>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

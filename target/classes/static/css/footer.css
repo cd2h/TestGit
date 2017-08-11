@@ -1,0 +1,21 @@
+#zh-footer {
+	width:100%;
+    color: #999;
+    text-align: right;
+    font-size: 13px;
+    line-height: 50px;
+    height:50px;  
+}
+
+#zh-footer a {
+    color: #999;
+}
+.copy{
+    float: left;
+}
+.breadcrumb{
+	background-color:#333;
+    margin-bottom: 0;
+    padding: 15px 15px;
+    border-top:2px solid #ddd;
+}

@@ -1,0 +1,38 @@
+body {
+    padding-top: 75px;
+}
+
+#sidebar {
+    color: #333;
+    line-height: 2.5;
+    font-size: 14px;
+    list-style: none;
+    position: fixed;
+}
+
+#sidebar a {
+    text-decoration: none;
+    color: #333;
+}
+
+#sidebar li a:hover {
+    text-decoration: underline;
+}
+
+.row h1,
+h2,
+h3,
+h4,
+h5 {
+    font-size: 16px;
+    margin-bottom: 1em;
+    line-height: 1;
+    color: #222;
+    font-weight: 700;
+}
+
+.row {
+    color: #222;
+    font-size: 14px;
+    line-height: 2;
+}

@@ -1,0 +1,145 @@
+body{
+	background-color: #3366CC;   
+}
+
+
+#wrap_div{
+	overflow：hidden;
+	padding-top：1px；
+	
+}
+
+#logo_div{
+	margin:170px auto 30px;
+	width:310px;
+	height: auto;
+}
+
+#logo_div_img{
+	background-image: url(../img/logo_white_medium.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 80px;
+	height: 59px;
+	float: left;
+	margin-top: -30px;
+}
+
+
+#introduce_div{
+	margin: 0 auto;
+	text-align: center;
+	width:210px;
+	float: left;
+}
+
+#form_wrap_div{
+	width: 300px;
+	margin: 30px auto 40px;
+
+	background-color: #FFFFFF;
+}
+
+#myTabs{
+	width: 200px;
+	height:auto;
+	margin: 50px auto 0px;
+	position: relative;
+}
+
+.tab{
+	width: auto;
+	float:left;
+	height: auto;
+	text-align: center;
+	border-bottom-color:#3366cc;
+	border-bottom-style: solid;
+	border-bottom-width: 5px;
+}
+
+.white_slider{
+	background-color: #fff;
+	height: 5px;
+	width: 100px;
+	position: relative;
+	left: 0px;
+	top: 40px;
+}
+
+.tab a{
+	display: block;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-decoration: none;
+}
+
+#form_wrap_div{
+	width:320px;
+	height: auto;
+	margin:10px auto;
+	background-color:#000000;/* IE6和部分IE7内核的浏览器(如QQ浏览器)下颜色被覆盖 */
+  	background-color:rgba(0,0,0,0.0); /* IE6和部分IE7内核的浏览器(如QQ浏览器)会读懂，但解析为透明 */
+}
+
+.login_form{
+	overflow: hidden;
+}
+
+.input-group{
+	margin: 2px 1px;
+	height:60px;
+}
+.login_input{
+	height:60px;
+}
+
+.whiteBoard{
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+	background: white;
+}
+
+.submit_div{
+	margin-top: 20px;
+	width: 100%;
+	height: auto;
+}
+
+.submit_input{
+	margin: 0 auto;
+	width: 100%;
+}
+
+.license_div{
+	text-align: center;
+	margin-top: 28px;
+}
+
+.license_div a,.license_div a:hover{
+	color:#ccc;
+}
+
+
+.wechat_div{
+	background-image: url(../img/wechat_icon.png);
+	background-color: #3366cc;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+	float:left;
+	margin-top:20px;
+	cursor:pointer;
+}
+
+.forget_password{
+	float: right;
+	margin-top:20px;
+}
+
+.forget_password a{
+	color:white;
+}

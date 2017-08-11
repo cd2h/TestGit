@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>城市</title>
+
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet"
+	href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="../css/docs.min.css" />
+
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div th:include="nav"></div>
+	<div class="container">
+
+		<div th:each="cityEntrySet : ${cities}">
+			<div th:if="${cityEntrySet.getValue().size() != 0}">
+				<div class="bs-callout bs-callout-info" id="callout-type-b-i-elems">
+					<h2 th:text="${cityEntrySet.getKey()}"></h2>
+					<br /> <br /> <span th:each="city : ${cityEntrySet.getValue()}">
+						<a th:href="@{'/city/'+${city.pinyin}}">
+							<span th:text="${city.name}" />
+						</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:include="footer"></div>
+</body>
+</html>

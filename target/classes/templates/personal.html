@@ -1,0 +1,271 @@
+<!--
+Author: luoruofeng
+Author URL: http://www.33css.com
+License: Creative Commons Attribution 3.0 Unported
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>My Skills a Resume Template Flat Bootstarp Responsive
+	Website Template | Home :: w3layouts</title>
+
+<script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" media="all" />
+<link href="../css/personal.css" rel="stylesheet" type="text/css"
+	media="all" />
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="../crop-avatar/css/cropper.min.css" />
+<link rel="stylesheet" href="../crop-avatar/css/main.css" />
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="../crop-avatar/js/cropper.min.js"></script>
+<script src="../crop-avatar/js/main.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="My Skills Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript">
+	
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    
+</script>
+
+<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<!--吸铁-->
+<script src="../js/stickyelements-animate.js" type="text/javascript" />
+
+<!--model-->
+<script type="text/javascript"
+	src="../bootstrap-modal-master/js/bootstrap-modal.js"></script>
+<link rel="stylesheet"
+	href="../bootstrap-modal-master/css/bootstrap-modal.css" />
+
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="../js/move-top.js"></script>
+<script type="text/javascript" src="../js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event) {
+			event.preventDefault();
+			$('html,body').animate({
+				scrollTop : $(this.hash).offset().top
+			}, 1200);
+		});
+
+		stickyElements('.img-circle', {
+			stickiness : 5,
+			pointer : true
+		});
+
+	});
+
+	function changeIntroduceContent() {
+		$('#responsive').modal('show');
+	}
+</script>
+</head>
+
+<body>
+	<!-- model start -->
+	<div id="responsive" class="modal fade" tabindex="-1" data-width="760"
+		style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">个人介绍</h4>
+				</div>
+				<form method="post" action="">
+					<div class="modal-body">
+						<textarea
+							style="width: 100%; resize: none; overflow-y: auto; font-size: 18px; line-height: 18px; border: 2px solid #1B9AF7; border-radius: 10px;"
+							rows="8" type="" class="" placeholder="个人介绍....">da sb</textarea>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						<button type="button" class="btn btn-primary">提交更改</button>
+					</div>
+				</form>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal -->
+	</div>
+	<!-- model end -->
+
+	<!--start-header-section-->
+	<div class="header-section">
+		<div class="continer" id="crop-avatar">
+		<div class="avatar-view" title="点击更换图像">
+			<img src="../img/p1.png" class="img-circle"
+				style="border: #FFFFFF solid 6px;" alt="Avatar" />
+		</div>
+		<div class="modal fade" id="avatar-modal" aria-hidden="true"
+			aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<form class="avatar-form" action="crop.php"
+						enctype="multipart/form-data" method="post">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" id="avatar-modal-label">上传图片</h4>
+						</div>
+						<div class="modal-body">
+							<div class="avatar-body">
+
+								<!-- Upload image and data -->
+								<div class="avatar-upload">
+									<input type="hidden" class="avatar-src" name="avatar_src" />
+									<input type="hidden" class="avatar-data" name="avatar_data" />
+									<label for="avatarInput">图片上传</label> <input type="file"
+										class="avatar-input" id="avatarInput" name="avatar_file" />
+								</div>
+
+								<!-- Crop and preview -->
+								<div class="row">
+									<div class="col-md-9">
+										<div class="avatar-wrapper"></div>
+									</div>
+									<div class="col-md-3">
+										<div class="avatar-preview preview-lg img-circle"></div>
+										<div class="avatar-preview preview-md img-circle"></div>
+										<div class="avatar-preview preview-sm img-circle"></div>
+									</div>
+								</div>
+
+								<div class="row avatar-btns">
+									<div class="col-md-9"></div>
+									<div class="col-md-3">
+										<button type="submit"
+											class="btn btn-primary btn-block avatar-save">保存</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+		<h1 style="cursor: pointer;"
+			onclick="javascript:changeIntroduceContent();">
+			hello..<span>!</span>
+		</h1>
+		<p onclick="javascript:changeIntroduceContent();"
+			style="cursor: pointer;height:200px;line-height:25px;max-width:80%;margin:0px 10%;">
+			控制办学规模。衡水市教育局在核定下达衡水第一中学年度招生计划时，须按照国家有关要求，在其办学条件、生师比例、班额标准满足国家办学标准的前提下，按照批准的办学规模，将其招生数量控制在合理的范围以控制办学规模。衡水市教育局在核定下达衡水第一中学年度招生计划时，须按照国家有关要求，在其办学条件、生师比例、班额标准满足国家办学标准的前提下，按照批准的办学规模，将其招生数量控制在合理的范围以控制办学规模。衡水市教育局在核定下达衡水第一中学年度招生计划时，须按照国家有关要求，在其办学条件、生师比例、班额标准满足国家办学标准的前提下，按照批准的办学规模，将其招生数量控制在合理的范围以
+		</p>
+	</div>
+	</div>
+	<!--end header-section-->
+	<!--start-study-section-->
+	<div class="study-section">
+		<div class="container">
+			<div class="study-grids">
+				<div class="col-md-6 study-grid">
+					<h3>
+						评价<span>!</span>
+					</h3>
+					<div class="study1" style="line-height: 30px;">
+						<p>
+							<label>我的:</label> <br />ss的
+						</p>
+						<p>
+							<label>我的眼睛有点瞎爱上你是我的错：</label> <br />我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你
+						</p>
+						<p>
+							<label>我的眼睛有点瞎爱上你是我的错：</label> <br />我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你
+						</p>
+						<p>
+							<label>我的眼睛有点瞎爱上你是我的错：</label> <br />我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你
+						</p>
+						<p>
+							<label>我的眼睛有点瞎爱上你是我的错：</label> <br />我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你
+						</p>
+						<p>
+							<label>我的眼睛有点瞎爱上你是我的错：</label> <br />我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你我爱你
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6 study-grid">
+					<h3>
+						累计评分<span>!</span>
+					</h3>
+					<div class="study2">
+						<h4>人品</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar"
+								aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+								style="width: 40%">
+								<span class="sr-only">40% Complete (success)</span>
+							</div>
+						</div>
+						<h4>形象</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-info" role="progressbar"
+								aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+								style="width: 20%">
+								<span class="sr-only">20% Complete</span>
+							</div>
+						</div>
+						<h4>魅力</h4>
+						<div class="progress">
+							<div class="progress-bar progress-bar-warning" role="progressbar"
+								aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+								style="width: 60%">
+								<span class="sr-only">60% Complete (warning)</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!--end study-section-->
+
+	<!--end-contact-section-->
+
+	<!--start-footer-section-->
+	<div class="footer-section">
+		<div class="container">
+			<div class="footer-top">
+				<p>
+					&copy; 2017 <span>Hello.</span> All rights reserved
+				</p>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					
+
+				});
+			</script>
+			<a href="#" id="toTop" style="display: block;"> <span
+				id="toTopHover" style="opacity: 1;"> </span></a>
+		</div>
+	</div>
+	<!--end-footer-section-->
+
+</body>
+
+</html>

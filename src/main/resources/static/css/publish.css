@@ -1,0 +1,79 @@
+.form-horizontal {
+	margin: 0px 10%;
+	width: 80%;
+	font-size: 18px;
+}
+
+.control-label {
+	font-size: 18px;
+	color: #666666;
+	margin-right: 20px;
+}
+
+.textarea textarea {
+	resize: none;
+	width: 62%;
+	overflow-y: auto;
+	font-size: 18px;
+	line-height: 18px;
+	border:2px solid #1B9AF7;
+	border-radius: 10px;
+}
+
+.dropdown-menu>li>a {
+	font-size: 18px;
+}
+
+.input-xlarge {
+	width: 50%;
+	display: inline;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.help-block {
+	color: red;
+}
+
+.controls {
+	margin: 35px 0px;
+}
+
+
+/**中 大等屏幕*/
+
+@media only screen and (min-width:670px) {}
+
+
+/**手机 平板*/
+
+@media only screen and (max-width:670px) {
+	.form-horizontal {
+		margin: 5px 2.5%;
+		width: 95%;
+		font-size: 16px;
+	}
+	.control-label {
+		font-size: 18px;
+		margin-right: 5px;
+	}
+	.textarea textarea {
+		width: 100%;
+		font-size: 18px;
+		line-height: 18px;
+	}
+	.input-xlarge {
+		width: 100%;
+		font-size: 18px;
+		line-height: 18px;
+	}
+	.controls {
+		margin: 25px 0px;
+	}
+	.special {
+		font-weight: bold !important;
+		color: #fff !important;
+		background: #bc0000 !important;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,33 @@
+.container{
+	background-color: #F5F5F5;
+	
+}
+
+.row{
+	margin:30px 0px;
+	border:1px solid #C0C1C2;
+	background-color: white;
+	
+}
+
+.comment_row{
+	background-color: #FFFFFF;
+	
+	font-size: 15px;
+}
+
+.comment_row div{
+	min-height: 90px;
+}
+
+.comment_row span{
+	font-size: 16px;
+	font-weight: 900;
+	word-break: word-break;
+}
+
+.comment_row img{
+	border:2px solid #336699;
+	width: 60px;
+	height: 60px;
+}
